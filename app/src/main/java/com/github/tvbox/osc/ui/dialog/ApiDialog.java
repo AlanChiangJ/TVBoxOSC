@@ -69,6 +69,10 @@ public class ApiDialog extends BaseDialog {
                     Hawk.put(HawkConfig.API_HISTORY, history);
                     listener.onchange(newApi);
                     dismiss();
+                }else {
+                    // 一定要传null，不能是空串，加载配置时，判断为null才读默认值
+                    listener.onchange(null);
+                    dismiss();
                 }
             }
         });
